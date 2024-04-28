@@ -1,0 +1,118 @@
+@import "../../globalStyles/mixins";
+
+.create {
+  @include flex(center,center);
+  &-btn {
+    border: none;
+    border-radius: 14px;
+    background-color: #727171;
+    color: azure;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all .3s ease;
+    margin-bottom: 20px;
+
+    &:hover {
+      background-color: #383838;
+      color: #dadada;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  @include flex(center,center);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 11;
+
+  &__body {
+    width: 100%;
+    max-width: 250px;
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px -10px black;
+    position: relative;
+  }
+  
+  &__close {
+    &-icon {
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    @include font(20px, 700);
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+
+    & label {
+      margin-bottom: 10px;
+    }
+
+    & input, & textarea {
+      border-radius: 10px;
+      border: 1px solid #9f9f9f;
+      padding: 6px 12px;
+      &.input-error {
+        border-color: red;
+      }
+    }
+  }
+
+  &__description {
+    resize: vertical;
+    max-height: 300px;
+    min-height: 45px;
+  }
+
+  & .error-message {
+    text-align: center;
+    color: red;
+    @include font(12px);
+  }
+
+  &__btns {
+    @include flex();
+  }
+
+  &__btn {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color .3s ease;
+
+
+    &-submit {
+      background-color: #99e199;
+
+      &:hover {
+        background-color: darken(#99e199, 10%);
+      }
+    }
+
+    &-close {
+      background-color: #5d5d5d;
+      color: #fff;
+
+      &:hover {
+        background-color: darken( #5d5d5d, 10%);
+      }
+    }
+  }
+}

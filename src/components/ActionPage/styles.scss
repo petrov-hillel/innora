@@ -1,0 +1,21 @@
+@import "../../globalStyles/mixins";
+
+.page {
+  @include flex(center,center);
+  &__wrapper {
+    max-width: 80vw;
+    border-radius: 20px;
+    box-shadow: 0 0 10px -10px black;
+    background-color: #c9c9c9;
+    padding: 40px;
+    margin-top: 20px;
+  }
+
+  &__btn {
+    border: none;
+    background-color: aliceblue;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 6px 10px;
+  }
+}
